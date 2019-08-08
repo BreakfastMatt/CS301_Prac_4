@@ -1,0 +1,26 @@
+//TeamZ
+Task4)
+
+- Is it LL(1):
+
+  First(OneNumber) = First(StartI),First(StartV), First(StartX)
+  First(StartI) = {"I"}
+  First(StartV) = {"V"}
+  First(StartX) = {"X"}
+  
+  Since all of the Firsts are disjoint and this is an e-free grammar
+  it is an LL(1) grammar.
+  
+  
+- Is it ambiguous:
+
+OneNumber  = StartI | StartV | StartX .
+StartI     = "I" ( ( ("I" | ε)  ("I" | ε) | "V" | "X" ) | ε) .
+StartV     = "V" ("I" | ε)  ("I" | ε) ("I" | ε) .
+StartX     = "X" . 
+
+II  --> I ε I  OR I I ε
+VII -->  V I ε I OR V ε I I OR V I I ε
+
+This means there are multiple routes to determine the same number
+which means that this grammar is ambiguous.
