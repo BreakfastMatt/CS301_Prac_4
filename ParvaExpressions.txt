@@ -1,0 +1,16 @@
+	ExpExp 	      = OrExp.
+	OrExp       = AndExp {OrOp AndExp}.
+	AndExp		  = EqExp {AndOp EqExp}. 
+	EqExp		  = RelExp {EqualityOp RelExp}.
+	RelExp       = AddExp [ (RelOp) AddExp ] .
+    AddExp            = [ "+" | "-" ] Term { AddOp Term } .
+    Term              = Factor { MulOp Factor } .
+    Factor            = Designator | Constant
+                        | "new" BasicType "[" ExpExp "]"
+                        | "!" Factor | "(" ExpExp ")" .
+	MulOp             = "*" | "%" | "/" .					
+    AddOp             = "+" | "-"  .
+	RelOp             = "<" | "<=" | ">" | ">=" .
+	EqualityOp		  = "==" | "!=" .
+	AndOp			  = "&&".
+	OrOp 			  = "||".				
