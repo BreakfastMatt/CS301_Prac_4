@@ -3,7 +3,7 @@ Task4)
 
 - Is it LL(1):
 
-  First(OneNumber) = First(StartI),First(StartV), First(StartX)
+  First(OneNumber) = First(StartI),First(StartV), First(StartX) = {"I", "V", "X"}
   First(StartI) = {"I"}
   First(StartV) = {"V"}
   First(StartX) = {"X"}
@@ -19,8 +19,11 @@ StartI     = "I" ( ( ("I" | ε)  ("I" | ε) | "V" | "X" ) | ε) .
 StartV     = "V" ("I" | ε)  ("I" | ε) ("I" | ε) .
 StartX     = "X" . 
 
-II  --> I ε I  OR I I ε
-VII -->  V I ε I OR V ε I I OR V I I ε
+Because it is an LL(1) grammar, it cannot be ambiguous (because it only has one path of derivation).
+II
+StartI -> "II"
 
-This means there are multiple routes to determine the same number
-which means that this grammar is ambiguous.
+VII
+StartV --> "VII"
+
+there are no alternative routes for these to take and therefore the grammar is not ambiguous.
