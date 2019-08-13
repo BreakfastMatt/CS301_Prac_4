@@ -1,0 +1,32 @@
+---------------------------------------\
+Key:								   |
+i = achieve aim.  					   |
+ii = which are LL(1).				   |				
+---------------------------------------/
+
+1. 
+i)   This does not achieve the aim because the production is circular and has no stopping case.
+ii)  The alternatives for the production palindrome are disjoint therefore it is LL(1). 
+
+2.
+i)	 This will achieve the aim.
+ii)  This is not LL(1) as some of the alternatives are not disjoint. 
+	 ("a" palindrome "a" | "a") <-- not disjoint
+
+3.
+i)	 This will achieve the aim (although does not allow for uneven palindromes, therefore it is somewhat limited)
+ii)  This is LL(1) because The alternatives for the production palindrome are disjoint. 
+
+4.
+i)	 This will achieve the aim.
+ii)	 This is not LL(1) as some of the alternatives are not disjoint. 
+	 ("a" palindrome "a" | "a") <-- not disjoint
+-------------------------------------------------------------------------------------------------
+
+
+Can you find other (perhaps better) grammars that describe palindromes and which are LL(1)?
+
+Yes.
+
+Palindrome = "a" Palindrome "a" | "b" Palindrome "b" | ε . 
+(quite limited, but it's LL(1))
