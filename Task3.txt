@@ -1,0 +1,9 @@
+a)	True. If a grammar has more than one parse tree, I.e. it can parse the same input in two different way then it is not LL(1). 
+	The way to prove this is to look at the ‘Firsts’ of each of the productions and if any two of them are not disjoint, 
+	the grammar is ambiguous and therefor violates the first rule of LL(1) grammars.
+
+b)	True. In order for a grammar to not be LL(1) it must have a multiple path parse tree which means it must be ambiguous.
+
+c)	False. It depends on the language but there are some ambiguous languages that can be parsed by both ambiguous and non-ambiguous grammars.
+
+d)	
